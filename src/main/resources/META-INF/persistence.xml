@@ -8,15 +8,15 @@
     	<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
     	
     	<!-- Define las clases que seran mappeadas al configurarse la conexion a la base de datos. -->
-    	<class>com.devpredator.projectjpa.entity.Disquera</class>
-    	<class>com.devpredator.projectjpa.entity.Genero</class>
-    	<class>com.devpredator.projectjpa.entity.SubGenero</class>
+    	<class>com.devpredator.practicaspringjsf.entity.Menu</class>
+    	<class>com.devpredator.practicaspringjsf.entity.Restaurante</class>
+    	<class>com.devpredator.practicaspringjsf.entity.TipoRestaurante</class>
     	
     	<properties>
     		<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-    		<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/tienda_musical?serverTimezone=America/Mexico_City"/>
+    		<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/restaurante?serverTimezone=UTC"/>
     		<property name="javax.persistence.jdbc.user" value="root"/>
-    		<property name="javax.persistence.jdbc.password" value="admin"/>
+    		<property name="javax.persistence.jdbc.password" value="Cocodrilo464"/>
     	
     		<property name="hibernate.show_sql" value="true"/>
     		<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>

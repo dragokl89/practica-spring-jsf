@@ -22,6 +22,7 @@ public class TipoRestaurante {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column
 	private Long idTipoRestaurante;
 	
 	@Column(name = "descripcion", length = 500, nullable = false)

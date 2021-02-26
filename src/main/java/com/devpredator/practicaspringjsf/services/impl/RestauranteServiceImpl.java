@@ -17,13 +17,15 @@ import com.devpredator.practicaspringjsf.services.RestauranteService;
  *
  */
 //:::::AGREGA AQUI LA ANOTACION PARA GENERAR UN BEAN DE NEGOCIO DE SPRING::::
+@Service
 public class RestauranteServiceImpl implements RestauranteService {
 
 	//:::::: AGREGA AQUI LA ANOTACION PARA INYECTAR EL BEAN REPOSITORY DE SPRING ::::::::
-	private RestauranteDAO empleadoDAOImpl;
+	@Autowired
+	private RestauranteDAO restauranteDAOImpl;
 	
 	@Override
 	public List<Restaurante> consultarRestaurantes() {
-		return null;
+		return this.restauranteDAOImpl.consultar();
 	}
 }

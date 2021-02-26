@@ -15,11 +15,14 @@ import org.springframework.beans.factory.annotation.Value;
 import com.devpredator.practicaspringjsf.entity.Restaurante;
 import com.devpredator.practicaspringjsf.services.RestauranteService;
 
+
 /**
  * @author DevPredator
  * Controlador de ejemplo para demostrar la integracion de Spring con JSF.
  */
 //:::::::AGREGA AQUI LAS ANOTACIONES DE JSF NECESARIAS::::
+@ManagedBean(name = "restaurantecontroller")
+@ViewScoped
 public class RestauranteController {
 
 	private List<Restaurante> restaurantes;
@@ -27,11 +30,18 @@ public class RestauranteController {
 	private List<Restaurante> restaurantesFiltrados;
 	
 	//:::: AGREGA AQUI LA ANOTACION QUE INYECTA UN BEAN DE SPRING CON JSF :::::::
+	@ManagedProperty("#{restauranteServiceImpl}")
 	private RestauranteService restauranteServiceImpl;
+	
+	
+
 	
 	@PostConstruct
 	public void init() {		
 		this.restaurantes = this.restauranteServiceImpl.consultarRestaurantes();
+		for (Restaurante restaurante : restaurantes) {
+			System.out.println(restaurante.getNombre());
+		}
 	}
 
 	/**
